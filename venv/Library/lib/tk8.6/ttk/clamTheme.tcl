@@ -5,7 +5,10 @@
 #
 
 namespace eval ttk::theme::clam {
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     variable colors
     array set colors {
 	-disabledfg		"#999999"
@@ -33,15 +36,26 @@ namespace eval ttk::theme::clam {
 	    -troughcolor $colors(-darker) \
 	    -selectbackground $colors(-selectbg) \
 	    -selectforeground $colors(-selectfg) \
+<<<<<<< HEAD
 	    -font TkDefaultFont
+=======
+	    -selectborderwidth 0 \
+	    -font TkDefaultFont \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style map "." \
 	    -background [list disabled $colors(-frame) \
 			     active $colors(-lighter)] \
 	    -foreground [list disabled $colors(-disabledfg)] \
 	    -selectbackground [list  !focus $colors(-darkest)] \
+<<<<<<< HEAD
 	    -selectforeground [list  !focus white]
 
+=======
+	    -selectforeground [list  !focus white] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	# -selectbackground [list  !focus "#847d73"]
 
 	ttk::style configure TButton \
@@ -53,7 +67,12 @@ namespace eval ttk::theme::clam {
 			     active $colors(-lighter)] \
 	    -lightcolor [list pressed $colors(-darker)] \
 	    -darkcolor [list pressed $colors(-darker)] \
+<<<<<<< HEAD
 	    -bordercolor [list alternate "#000000"]
+=======
+	    -bordercolor [list alternate "#000000"] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure Toolbutton \
 	    -anchor center -padding 2 -relief flat
@@ -68,16 +87,29 @@ namespace eval ttk::theme::clam {
 		    pressed $colors(-darker) \
 		    active $colors(-lighter)] \
 	    -lightcolor [list pressed $colors(-darker)] \
+<<<<<<< HEAD
 	    -darkcolor [list pressed $colors(-darker)]
+=======
+	    -darkcolor [list pressed $colors(-darker)] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TCheckbutton \
 	    -indicatorbackground "#ffffff" \
 	    -indicatormargin {1 1 4 1} \
+<<<<<<< HEAD
 	    -padding 2
 	ttk::style configure TRadiobutton \
 	    -indicatorbackground "#ffffff" \
 	    -indicatormargin {1 1 4 1} \
 	    -padding 2
+=======
+	    -padding 2 ;
+	ttk::style configure TRadiobutton \
+	    -indicatorbackground "#ffffff" \
+	    -indicatormargin {1 1 4 1} \
+	    -padding 2 ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	ttk::style map TCheckbutton -indicatorbackground \
 	    [list  pressed $colors(-frame) \
 			{!disabled alternate} $colors(-altindicator) \
@@ -96,7 +128,13 @@ namespace eval ttk::theme::clam {
 	ttk::style map TEntry \
 	    -background [list  readonly $colors(-frame)] \
 	    -bordercolor [list  focus $colors(-selectbg)] \
+<<<<<<< HEAD
 	    -lightcolor [list  focus "#6f9dc6"]
+=======
+	    -lightcolor [list  focus "#6f9dc6"] \
+	    -darkcolor [list  focus "#6f9dc6"] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TCombobox -padding 1 -insertwidth 1
 	ttk::style map TCombobox \
@@ -105,22 +143,35 @@ namespace eval ttk::theme::clam {
 	    -fieldbackground [list {readonly focus} $colors(-selectbg) \
 				  readonly $colors(-frame)] \
 	    -foreground [list {readonly focus} $colors(-selectfg)] \
+<<<<<<< HEAD
 	    -arrowcolor [list disabled $colors(-disabledfg)] \
 	    -bordercolor [list focus $colors(-selectbg)]
+=======
+	    -arrowcolor [list disabled $colors(-disabledfg)]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	ttk::style configure ComboboxPopdownFrame \
 	    -relief solid -borderwidth 1
 
 	ttk::style configure TSpinbox -arrowsize 10 -padding {2 0 10 0}
 	ttk::style map TSpinbox \
 	    -background [list  readonly $colors(-frame)] \
+<<<<<<< HEAD
             -arrowcolor [list disabled $colors(-disabledfg)] \
 	    -bordercolor [list focus $colors(-selectbg)]
+=======
+            -arrowcolor [list disabled $colors(-disabledfg)]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TNotebook.Tab -padding {6 2 6 2}
 	ttk::style map TNotebook.Tab \
 	    -padding [list selected {6 4 6 2}] \
 	    -background [list selected $colors(-frame) {} $colors(-darker)] \
+<<<<<<< HEAD
 	    -lightcolor [list selected $colors(-lighter) {} $colors(-dark)]
+=======
+	    -lightcolor [list selected $colors(-lighter) {} $colors(-dark)] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	# Treeview:
 	ttk::style configure Heading \
@@ -130,8 +181,12 @@ namespace eval ttk::theme::clam {
 	    -background [list disabled $colors(-frame)\
 				selected $colors(-selectbg)] \
 	    -foreground [list disabled $colors(-disabledfg) \
+<<<<<<< HEAD
 				selected $colors(-selectfg)] \
 	    -bordercolor [list focus $colors(-selectbg)]
+=======
+				selected $colors(-selectfg)]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
     	ttk::style configure TLabelframe \
 	    -labeloutside true -labelmargins {0 0 0 4} \
@@ -142,6 +197,7 @@ namespace eval ttk::theme::clam {
 	ttk::style configure Sash -sashthickness 6 -gripcount 10
     }
 }
+<<<<<<< HEAD
 
 # ttk::theme::clam::configureNotebookStyle --
 #
@@ -173,3 +229,5 @@ proc ttk::theme::clam::configureNotebookStyle {style} {
 	}
     }
 }
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a

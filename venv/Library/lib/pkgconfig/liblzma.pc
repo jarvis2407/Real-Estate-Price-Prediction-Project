@@ -1,7 +1,11 @@
 # SPDX-License-Identifier: 0BSD
 # Author: Lasse Collin
 
+<<<<<<< HEAD
 prefix=C:/Users/lahya/OneDrive/Documents/harsha/venv/Library
+=======
+prefix=C:/Users/rajas/Real-Estate-Price-Prediction-Project/venv/Library
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

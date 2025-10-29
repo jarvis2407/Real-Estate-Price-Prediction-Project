@@ -8,7 +8,10 @@ import os
 import pytest
 import sys
 import textwrap
+<<<<<<< HEAD
 import types
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 import unittest
 import random
 
@@ -127,7 +130,11 @@ def test_unicode_range():
     assert len_exp == len_test, message
 
     # fail if new unicode symbols have been added.
+<<<<<<< HEAD
     assert len_exp <= 148853, message
+=======
+    assert len_exp <= 143668, message
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 @contextmanager
@@ -905,6 +912,7 @@ class TestCompleter(unittest.TestCase):
         self.assertNotIn("%_bar_cellm", matches)
         self.assertIn("%%_bar_cellm", matches)
 
+<<<<<<< HEAD
     def test_line_magics_with_code_argument(self):
         ip = get_ipython()
         c = ip.Completer
@@ -965,6 +973,8 @@ class TestCompleter(unittest.TestCase):
         text, matches = c.complete("timeit -n 2 -r 1 flo")
         self.assertEqual(matches, ["float"])
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     def test_magic_completion_order(self):
         ip = get_ipython()
         c = ip.Completer
@@ -1464,6 +1474,7 @@ class TestCompleter(unittest.TestCase):
             _, matches = complete(line_buffer="math.")
             self.assertNotIn(".pi", matches)
 
+<<<<<<< HEAD
     def test_completion_allow_custom_getattr_per_module(self):
         factory_code = textwrap.dedent(
             """
@@ -1531,6 +1542,8 @@ class TestCompleter(unittest.TestCase):
             with evaluation_policy("limited", test=[]):
                 pass
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     def test_dict_key_completion_bytes(self):
         """Test handling of bytes in dict key completion"""
         ip = get_ipython()
@@ -1975,6 +1988,7 @@ class TestCompleter(unittest.TestCase):
 
 
 @pytest.mark.parametrize(
+<<<<<<< HEAD
     "use_jedi,evaluation",
     [
         [True, "minimal"],
@@ -2056,6 +2070,8 @@ def test_undefined_variables(use_jedi, evaluation, code, insert_text):
 
 
 @pytest.mark.parametrize(
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "line,expected",
     [
         # Basic test cases

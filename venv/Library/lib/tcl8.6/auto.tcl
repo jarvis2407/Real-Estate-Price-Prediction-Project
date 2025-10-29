@@ -141,7 +141,11 @@ proc tcl_findLibrary {basename version patch initScript enVarName varName} {
 	# source command, but no file exists command
 
 	if {[interp issafe] || [file exists $file]} {
+<<<<<<< HEAD
 	    if {![catch {uplevel #0 [list source -encoding utf-8 $file]} msg opts]} {
+=======
+	    if {![catch {uplevel #0 [list source $file]} msg opts]} {
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		return
 	    }
 	    append errors "$file: $msg\n"
@@ -214,7 +218,10 @@ proc auto_mkindex {dir args} {
     auto_mkindex_parser::cleanup
 
     set fid [open "tclIndex" w]
+<<<<<<< HEAD
     fconfigure $fid -encoding utf-8
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     puts -nonewline $fid $index
     close $fid
     cd $oldDir
@@ -246,7 +253,11 @@ proc auto_mkindex_old {dir args} {
 		if {[regexp {^proc[ 	]+([^ 	]*)} $line match procName]} {
 		    set procName [lindex [auto_qualify $procName "::"] 0]
 		    append index "set [list auto_index($procName)]"
+<<<<<<< HEAD
 		    append index " \[list source -encoding utf-8 \[file join \$dir [list $file]\]\]\n"
+=======
+		    append index " \[list source \[file join \$dir [list $file]\]\]\n"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		}
 	    }
 	    close $f
@@ -532,7 +543,11 @@ proc auto_mkindex_parser::indexEntry {name} {
     set filenameParts [file split $scriptFile]
 
     append index [format \
+<<<<<<< HEAD
 	    {set auto_index(%s) [list source -encoding utf-8 [file join $dir %s]]%s} \
+=======
+	    {set auto_index(%s) [list source [file join $dir %s]]%s} \
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	    $name $filenameParts \n]
     return
 }

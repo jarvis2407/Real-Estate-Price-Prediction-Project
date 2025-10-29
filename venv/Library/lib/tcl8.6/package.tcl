@@ -31,6 +31,7 @@ proc tcl::Pkg::CompareExtension {fileName {ext {}}} {
     global tcl_platform
     if {$ext eq ""} {set ext [info sharedlibextension]}
     if {$tcl_platform(platform) eq "windows"} {
+<<<<<<< HEAD
 	return [string equal -nocase [file extension $fileName] $ext]
     } else {
 	# Some unices add trailing numbers after the .so, so
@@ -41,6 +42,18 @@ proc tcl::Pkg::CompareExtension {fileName {ext {}}} {
 	    if {$currExt eq $ext} {
 		return 1
 	    }
+=======
+        return [string equal -nocase [file extension $fileName] $ext]
+    } else {
+        # Some unices add trailing numbers after the .so, so
+        # we could have something like '.so.1.2'.
+        set root $fileName
+        while {1} {
+            set currExt [file extension $root]
+            if {$currExt eq $ext} {
+                return 1
+            }
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	    # The current extension does not match; if it is not a numeric
 	    # value, quit, as we are only looking to ignore version number
@@ -51,7 +64,11 @@ proc tcl::Pkg::CompareExtension {fileName {ext {}}} {
 	    if {![string is integer -strict [string range $currExt 1 end]]} {
 		return 0
 	    }
+<<<<<<< HEAD
 	    set root [file rootname $root]
+=======
+            set root [file rootname $root]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	}
     }
 }
@@ -291,7 +308,11 @@ proc pkg_mkIndex {args} {
 		    set ::tcl::type load
 		} else {
 		    set ::tcl::debug sourcing
+<<<<<<< HEAD
 		    source -encoding utf-8 [file join $::tcl::dir $::tcl::file]
+=======
+		    source [file join $::tcl::dir $::tcl::file]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    set ::tcl::type source
 		}
 
@@ -441,7 +462,11 @@ proc tclPkgSetup {dir pkg version files} {
 	    if {$type eq "load"} {
 		set auto_index($cmd) [list load [file join $dir $f] $pkg]
 	    } else {
+<<<<<<< HEAD
 		set auto_index($cmd) [list source -encoding utf-8 [file join $dir $f]]
+=======
+		set auto_index($cmd) [list source [file join $dir $f]]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	    }
 	}
     }
@@ -491,7 +516,11 @@ proc tclPkgUnknown {name args} {
 		set dir [file dirname $file]
 		if {![info exists procdDirs($dir)]} {
 		    try {
+<<<<<<< HEAD
 			source -encoding utf-8 $file
+=======
+			source $file
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    } trap {POSIX EACCES} {} {
 			# $file was not readable; silently ignore
 			continue
@@ -509,7 +538,11 @@ proc tclPkgUnknown {name args} {
 	    # safe interps usually don't have "file exists",
 	    if {([interp issafe] || [file exists $file])} {
 		try {
+<<<<<<< HEAD
 		    source -encoding utf-8 $file
+=======
+		    source $file
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		} trap {POSIX EACCES} {} {
 		    # $file was not readable; silently ignore
 		    continue

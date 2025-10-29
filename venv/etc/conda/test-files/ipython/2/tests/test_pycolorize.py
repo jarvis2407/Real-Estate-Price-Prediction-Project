@@ -41,7 +41,11 @@ def function(arg, *args, kwarg=True, **kwargs):
     pass is True
     False == None
 
+<<<<<<< HEAD
     with io.open(rf'unicode {1}', encoding='utf-8'):
+=======
+    with io.open(ru'unicode', encoding='utf-8'):
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
         raise ValueError("escape \r sequence")
 
     print("wěird ünicoðe")

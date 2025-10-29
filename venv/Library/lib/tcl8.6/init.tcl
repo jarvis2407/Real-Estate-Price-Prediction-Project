@@ -6,9 +6,13 @@
 # Copyright (c) 1991-1993 The Regents of the University of California.
 # Copyright (c) 1994-1996 Sun Microsystems, Inc.
 # Copyright (c) 1998-1999 Scriptics Corporation.
+<<<<<<< HEAD
 # Copyright (c) 2004 Kevin B. Kenny.
 #
 # All rights reserved.
+=======
+# Copyright (c) 2004 Kevin B. Kenny.  All rights reserved.
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #
 # See the file "license.terms" for information on usage and redistribution
 # of this file, and for a DISCLAIMER OF ALL WARRANTIES.
@@ -18,7 +22,11 @@
 if {[info commands package] == ""} {
     error "version mismatch: library\nscripts expect Tcl version 7.5b1 or later but the loaded version is\nonly [info patchlevel]"
 }
+<<<<<<< HEAD
 package require -exact Tcl 8.6.15
+=======
+package require -exact Tcl 8.6.14
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 # Compute the auto path to use in this interpreter.
 # The values on the path come from several locations:
@@ -51,7 +59,10 @@ if {![info exists auto_path]} {
 	set auto_path ""
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 namespace eval tcl {
     if {![interp issafe]} {
 	variable Dir
@@ -426,13 +437,17 @@ proc unknown args {
 proc auto_load {cmd {namespace {}}} {
     global auto_index auto_path
 
+<<<<<<< HEAD
     # qualify names:
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     if {$namespace eq ""} {
 	set namespace [uplevel 1 [list ::namespace current]]
     }
     set nameList [auto_qualify $cmd $namespace]
     # workaround non canonical auto_index entries that might be around
     # from older auto_mkindex versions
+<<<<<<< HEAD
     if {$cmd ni $nameList} {lappend nameList $cmd}
 
     # try to load (and create sub-cmd handler "_sub_load_cmd" for further usage):
@@ -440,6 +455,12 @@ proc auto_load {cmd {namespace {}}} {
 	# via auto_index:
 	if {[info exists auto_index($name)]} {
 	    namespace inscope :: $auto_index($name)
+=======
+    lappend nameList $cmd
+    foreach name $nameList {
+	if {[info exists auto_index($name)]} {
+	    namespace eval :: $auto_index($name)
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	    # There's a couple of ways to look for a command of a given
 	    # name.  One is to use
 	    #    info commands $name
@@ -451,6 +472,7 @@ proc auto_load {cmd {namespace {}}} {
 		return 1
 	    }
 	}
+<<<<<<< HEAD
     }]
 
     # load auto_index if possible:
@@ -464,6 +486,24 @@ proc auto_load {cmd {namespace {}}} {
     # try again (something new could be loaded):
     foreach name $nameList $_sub_load_cmd
 
+=======
+    }
+    if {![info exists auto_path]} {
+	return 0
+    }
+
+    if {![auto_load_index]} {
+	return 0
+    }
+    foreach name $nameList {
+	if {[info exists auto_index($name)]} {
+	    namespace eval :: $auto_index($name)
+	    if {[namespace which -command $name] ne ""} {
+		return 1
+	    }
+	}
+    }
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     return 0
 }
 
@@ -493,12 +533,20 @@ proc auto_load_index {} {
 	set dir [lindex $auto_path $i]
 	set f ""
 	if {$issafe} {
+<<<<<<< HEAD
 	    catch {source -encoding utf-8 [file join $dir tclIndex]}
+=======
+	    catch {source [file join $dir tclIndex]}
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	} elseif {[catch {set f [open [file join $dir tclIndex]]}]} {
 	    continue
 	} else {
 	    set error [catch {
+<<<<<<< HEAD
 		fconfigure $f -eofchar "\x1A {}" -encoding utf-8
+=======
+		fconfigure $f -eofchar "\x1A {}"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		set id [gets $f]
 		if {$id eq "# Tcl autoload index file, version 2.0"} {
 		    eval [read $f]
@@ -510,7 +558,11 @@ proc auto_load_index {} {
 			}
 			set name [lindex $line 0]
 			set auto_index($name) \
+<<<<<<< HEAD
 				"source -encoding utf-8 [file join $dir [lindex $line 1]]"
+=======
+				"source [file join $dir [lindex $line 1]]"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    }
 		} else {
 		    error "[file join $dir tclIndex] isn't a proper Tcl index file"
@@ -611,12 +663,21 @@ proc auto_import {pattern} {
     auto_load_index
 
     foreach pattern $patternList {
+<<<<<<< HEAD
 	foreach name [array names auto_index $pattern] {
 	    if {([namespace which -command $name] eq "")
 		    && ([namespace qualifiers $pattern] eq [namespace qualifiers $name])} {
 		namespace inscope :: $auto_index($name)
 	    }
 	}
+=======
+        foreach name [array names auto_index $pattern] {
+            if {([namespace which -command $name] eq "")
+		    && ([namespace qualifiers $pattern] eq [namespace qualifiers $name])} {
+                namespace eval :: $auto_index($name)
+            }
+        }
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 }
 
@@ -677,14 +738,25 @@ proc auto_execok name {
 	return ""
     }
 
+<<<<<<< HEAD
     set path "[file dirname [info nameofexecutable]];.;"
+=======
+    set path "[file dirname [info nameof]];.;"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     if {[info exists env(SystemRoot)]} {
 	set windir $env(SystemRoot)
     } elseif {[info exists env(WINDIR)]} {
 	set windir $env(WINDIR)
     }
     if {[info exists windir]} {
+<<<<<<< HEAD
 	append path "$windir/system32;$windir/system;$windir;"
+=======
+	if {$tcl_platform(os) eq "Windows NT"} {
+	    append path "$windir/system32;"
+	}
+	append path "$windir/system;$windir;"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 
     foreach var {PATH Path path} {

@@ -56,10 +56,17 @@ extern "C" {
 #endif
 #define TCL_MINOR_VERSION   6
 #define TCL_RELEASE_LEVEL   TCL_FINAL_RELEASE
+<<<<<<< HEAD
 #define TCL_RELEASE_SERIAL  15
 
 #define TCL_VERSION	    "8.6"
 #define TCL_PATCH_LEVEL	    "8.6.15"
+=======
+#define TCL_RELEASE_SERIAL  14
+
+#define TCL_VERSION	    "8.6"
+#define TCL_PATCH_LEVEL	    "8.6.14"
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 /*
  *----------------------------------------------------------------------------
@@ -148,6 +155,7 @@ extern "C" {
 #	define TCL_FORMAT_PRINTF(a,b) __attribute__ ((__format__ (__printf__, a, b)))
 #   endif
 #   define TCL_NORETURN __attribute__ ((noreturn))
+<<<<<<< HEAD
 #else
 #   define TCL_FORMAT_PRINTF(a,b)
 #   if defined(_MSC_VER) && (_MSC_VER >= 1310)
@@ -157,6 +165,22 @@ extern "C" {
 #   endif
 #endif
 #define TCL_NORETURN1 /* nothing */
+=======
+#   if defined(BUILD_tcl) || defined(BUILD_tk)
+#	define TCL_NORETURN1 __attribute__ ((noreturn))
+#   else
+#	define TCL_NORETURN1 /* nothing */
+#   endif
+#else
+#   define TCL_FORMAT_PRINTF(a,b)
+#   if defined(_MSC_VER) && (_MSC_VER >= 1310)
+#	define TCL_NORETURN _declspec(noreturn)
+#   else
+#	define TCL_NORETURN /* nothing */
+#   endif
+#   define TCL_NORETURN1 /* nothing */
+#endif
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 /*
  * Allow a part of Tcl's API to be explicitly marked as deprecated.
@@ -1229,6 +1253,7 @@ struct Tcl_HashEntry {
  * TCL_HASH_KEY_SYSTEM_HASH -	If this flag is set then all memory internally
  *                              allocated for the hash table that is not for an
  *                              entry will use the system heap.
+<<<<<<< HEAD
  * TCL_HASH_KEY_DIRECT_COMPARE -
  * 	                        Allows fast comparison for hash keys directly
  *                              by compare of their key.oneWordValue values,
@@ -1236,11 +1261,16 @@ struct Tcl_HashEntry {
  *                              than a direct compare, so it is speed-up only
  *                              flag). Don't use it if keys contain values rather
  *                              than pointers.
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  */
 
 #define TCL_HASH_KEY_RANDOMIZE_HASH 0x1
 #define TCL_HASH_KEY_SYSTEM_HASH    0x2
+<<<<<<< HEAD
 #define TCL_HASH_KEY_DIRECT_COMPARE 0x4
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 /*
  * Structure definition for the methods associated with a hash table key type.
@@ -2553,9 +2583,15 @@ EXTERN void		Tcl_GetMemoryInfo(Tcl_DString *dsPtr);
  */
 
 #define Tcl_GetHashValue(h) ((h)->clientData)
+<<<<<<< HEAD
 #define Tcl_SetHashValue(h, value) ((h)->clientData = (void *)(value))
 #define Tcl_GetHashKey(tablePtr, h) \
 	((void *)(((tablePtr)->keyType == TCL_ONE_WORD_KEYS || \
+=======
+#define Tcl_SetHashValue(h, value) ((h)->clientData = (ClientData) (value))
+#define Tcl_GetHashKey(tablePtr, h) \
+	((void *) (((tablePtr)->keyType == TCL_ONE_WORD_KEYS || \
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    (tablePtr)->keyType == TCL_CUSTOM_PTR_KEYS) \
 		   ? (h)->key.oneWordValue \
 		   : (h)->key.string))

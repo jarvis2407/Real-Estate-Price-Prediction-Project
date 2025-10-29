@@ -201,6 +201,7 @@ def test_set_matplotlib_formats_kwargs():
     cfg = _get_inline_config()
     cfg.print_figure_kwargs.update(dict(foo="bar"))
     kwargs = dict(dpi=150)
+<<<<<<< HEAD
     try:
         set_matplotlib_formats("png", **kwargs)
         formatter = ip.display_formatter.formatters["image/png"]
@@ -272,6 +273,17 @@ def test_matplotlib_positioning():
             _ip.user_ns["_"] = prev_user_ns_underscore
         elif "_" in _ip.user_ns:
             del _ip.user_ns["_"]
+=======
+    set_matplotlib_formats("png", **kwargs)
+    formatter = ip.display_formatter.formatters["image/png"]
+    f = formatter.lookup_by_type(Figure)
+    formatter_kwargs = f.keywords
+    expected = kwargs
+    expected["base64"] = True
+    expected["fmt"] = "png"
+    expected.update(cfg.print_figure_kwargs)
+    assert formatter_kwargs == expected
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 def test_display_available():

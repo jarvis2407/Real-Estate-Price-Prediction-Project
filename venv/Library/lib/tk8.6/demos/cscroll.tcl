@@ -79,7 +79,11 @@ if {([tk windowingsystem] eq "aqua") && ![package vsatisfies [package provide Tk
     #     (int)1/-30 = -1,
     # but
     #     (int)-1/-30 = 0
+<<<<<<< HEAD
     # The following code ensures equal +/- behaviour.
+=======
+    # The following code ensure equal +/- behaviour.
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     bind $c <MouseWheel> {
 	if {%D >= 0} {
 	    %W yview scroll [expr {%D/-30}] units
@@ -89,9 +93,15 @@ if {([tk windowingsystem] eq "aqua") && ![package vsatisfies [package provide Tk
     }
     bind $c <Option-MouseWheel> {
 	if {%D >= 0} {
+<<<<<<< HEAD
 	    %W yview scroll [expr {%D/-12}] units
 	} else {
 	    %W yview scroll [expr {(%D-11)/-12}] units
+=======
+	    %W yview scroll [expr {%D/-3}] units
+	} else {
+	    %W yview scroll [expr {(%D-2)/-3}] units
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	}
     }
     bind $c <Shift-MouseWheel> {
@@ -103,9 +113,15 @@ if {([tk windowingsystem] eq "aqua") && ![package vsatisfies [package provide Tk
     }
     bind $c <Shift-Option-MouseWheel> {
 	if {%D >= 0} {
+<<<<<<< HEAD
 	    %W xview scroll [expr {%D/-12}] units
 	} else {
 	    %W xview scroll [expr {(%D-11)/-12}] units
+=======
+	    %W xview scroll [expr {%D/-3}] units
+	} else {
+	    %W xview scroll [expr {(%D-2)/-3}] units
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	}
     }
 }
@@ -137,6 +153,10 @@ if {[tk windowingsystem] eq "x11" && ![package vsatisfies [package provide Tk] 8
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 proc scrollEnter canvas {
     global oldFill
     set id [$canvas find withtag current]

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 # -*- coding: utf-8 -*-
 import re
 import sys

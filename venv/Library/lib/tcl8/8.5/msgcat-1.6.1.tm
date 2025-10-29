@@ -18,7 +18,11 @@ package provide msgcat 1.6.1
 
 namespace eval msgcat {
     namespace export mc mcexists mcload mclocale mcmax mcmset mcpreferences mcset\
+<<<<<<< HEAD
 	    mcunknown mcflset mcflmset mcloadedlocales mcforgetpackage\
+=======
+            mcunknown mcflset mcflmset mcloadedlocales mcforgetpackage\
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	    mcpackageconfig mcpackagelocale
 
     # Records the list of locales to search
@@ -460,7 +464,11 @@ proc msgcat::mcpackagelocale {subcommand {locale ""}} {
 	    return -code error "wrong # args: should be\
 		    \"[lrange [info level 0] 0 1]\""
 	}
+<<<<<<< HEAD
 	set locale [string tolower $locale]
+=======
+        set locale [string tolower $locale]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
     set ns [uplevel 1 {::namespace current}]
 
@@ -631,7 +639,11 @@ proc msgcat::mcpackageconfig {subcommand option {value ""}} {
 		    \"[lrange [info level 0] 0 2] value\""
 	}
     } elseif {$subcommand eq "set"} {
+<<<<<<< HEAD
 	return -code error\
+=======
+        return -code error\
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		"wrong # args: should be \"[lrange [info level 0] 0 2]\""
     }
 

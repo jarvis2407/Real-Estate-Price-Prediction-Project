@@ -269,7 +269,12 @@ proc ttk::combobox::PopdownWindow {cb} {
 	    -yscrollcommand [list $popdown.sb set] \
 	    -exportselection false \
 	    -selectmode browse \
+<<<<<<< HEAD
 	    -activestyle none
+=======
+	    -activestyle none \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	bindtags $popdown.l \
 	    [list $popdown.l ComboboxListbox Listbox $popdown all]

@@ -12,10 +12,19 @@ namespace eval ttk::theme::xpnative {
 	    -selectforeground SystemHighlightText \
 	    -selectbackground SystemHighlight \
 	    -insertcolor SystemWindowText \
+<<<<<<< HEAD
 	    -font TkDefaultFont
 
 	ttk::style map "." \
 	    -foreground [list disabled SystemGrayText]
+=======
+	    -font TkDefaultFont \
+	    ;
+
+	ttk::style map "." \
+	    -foreground [list disabled SystemGrayText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TButton -anchor center -padding {1 1} -width -11
 	ttk::style configure TRadiobutton -padding 2
@@ -32,7 +41,12 @@ namespace eval ttk::theme::xpnative {
 	ttk::style configure TEntry -padding {2 2 2 4}
 	ttk::style map TEntry \
 	    -selectbackground [list !focus SystemWindow] \
+<<<<<<< HEAD
 	    -selectforeground [list !focus SystemWindowText]
+=======
+	    -selectforeground [list !focus SystemWindowText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	ttk::style configure TCombobox -padding 2
 	ttk::style map TCombobox \
 	    -selectbackground [list !focus SystemWindow] \
@@ -41,12 +55,22 @@ namespace eval ttk::theme::xpnative {
 		disabled		SystemGrayText \
 	    	{readonly focus}	SystemHighlightText \
 	    ] \
+<<<<<<< HEAD
 	    -focusfill	[list {readonly focus} SystemHighlight]
+=======
+	    -focusfill	[list {readonly focus} SystemHighlight] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TSpinbox -padding {2 0 14 0}
 	ttk::style map TSpinbox \
 	    -selectbackground [list !focus SystemWindow] \
+<<<<<<< HEAD
 	    -selectforeground [list !focus SystemWindowText]
+=======
+	    -selectforeground [list !focus SystemWindowText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure Toolbutton -padding {4 4}
 
@@ -57,6 +81,7 @@ namespace eval ttk::theme::xpnative {
 	    -background [list   disabled SystemButtonFace \
 				selected SystemHighlight] \
 	    -foreground [list   disabled SystemGrayText \
+<<<<<<< HEAD
 				selected SystemHighlightText]
     }
 }
@@ -89,5 +114,8 @@ proc ttk::theme::xpnative::configureNotebookStyle {style} {
 	    ttk::style configure $style -tabmargins     {2 2 2 0}
 	    ttk::style map $style.Tab -expand {selected {2 2 2 2}}
 	}
+=======
+				selected SystemHighlightText];
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 }

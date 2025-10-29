@@ -376,7 +376,11 @@ proc ::safe::InterpSetConfig {child access_path staticsok nestedok deletehook} {
 	    # Prevent the addition of dirs on the tm list to the
 	    # result if they are already known.
 	    if {[dict exists $remap_access_path $dir]} {
+<<<<<<< HEAD
 		if {$firstpass} {
+=======
+	        if {$firstpass} {
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    # $dir is in [::tcl::tm::list] and belongs in the slave_tm_path.
 		    # Later passes handle subdirectories, which belong in the
 		    # access path but not in the module path.
@@ -532,14 +536,22 @@ proc ::safe::InterpInit {
     # other procedures defined:
 
     if {[catch {::interp eval $child {
+<<<<<<< HEAD
 	source -encoding utf-8 [file join $tcl_library init.tcl]
+=======
+	source [file join $tcl_library init.tcl]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }} msg opt]} {
 	Log $child "can't source init.tcl ($msg)"
 	return -options $opt "can't source init.tcl into slave $child ($msg)"
     }
 
     if {[catch {::interp eval $child {
+<<<<<<< HEAD
 	source -encoding utf-8 [file join $tcl_library tm.tcl]
+=======
+	source [file join $tcl_library tm.tcl]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }} msg opt]} {
 	Log $child "can't source tm.tcl ($msg)"
 	return -options $opt "can't source tm.tcl into slave $child ($msg)"
@@ -596,9 +608,15 @@ proc ::safe::interpDelete {child} {
     # Safe Base sub-interpreter, so each one is deleted cleanly and not by
     # the automatic mechanism built into [interp delete].
     foreach sub [interp children $child] {
+<<<<<<< HEAD
 	if {[info exists ::safe::[VarName [list $child $sub]]]} {
 	    ::safe::interpDelete [list $child $sub]
 	}
+=======
+        if {[info exists ::safe::[VarName [list $child $sub]]]} {
+            ::safe::interpDelete [list $child $sub]
+        }
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 
     # If the child has a cleanup hook registered, call it.  Check the
@@ -991,10 +1009,13 @@ proc ::safe::AliasSource {child args} {
 	::interp eval $child [list info script $file]
     } msg opt]
     if {$code == 0} {
+<<<<<<< HEAD
 	# See [Bug 1d26e580cf]
 	if {[string index $contents 0] eq "\uFEFF"} {
 	    set contents [string range $contents 1 end]
 	}
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	set code [catch {::interp eval $child $contents} msg opt]
 	set replacementMsg $msg
     }
@@ -1196,6 +1217,7 @@ proc ::safe::AliasExeName {child} {
 proc ::safe::RejectExcessColons {child} {
     set stripped [regsub -all -- {:::*} $child ::]
     if {[string range $stripped end-1 end] eq {::}} {
+<<<<<<< HEAD
 	return -code error {interpreter name must not end in "::"}
     }
     if {$stripped ne $child} {
@@ -1204,6 +1226,16 @@ proc ::safe::RejectExcessColons {child} {
     }
     if {[string range $stripped 0 1] eq {::}} {
 	return -code error {interpreter name must not begin "::"}
+=======
+        return -code error {interpreter name must not end in "::"}
+    }
+    if {$stripped ne $child} {
+        set msg {interpreter name has excess colons in namespace separators}
+        return -code error $msg
+    }
+    if {[string range $stripped 0 1] eq {::}} {
+        return -code error {interpreter name must not begin "::"}
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
     return
 }

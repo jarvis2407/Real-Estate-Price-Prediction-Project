@@ -197,7 +197,11 @@ proc ::tcl::HistInfo {{count {}}} {
 	if {![info exists history($i)]} {
 	    continue
 	}
+<<<<<<< HEAD
 	set cmd [string map [list \n \n\t] [string trimright $history($i) \ \n]]
+=======
+        set cmd [string map [list \n \n\t] [string trimright $history($i) \ \n]]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	append result $newline[format "%6d  %s" $i $cmd]
 	set newline \n
     }

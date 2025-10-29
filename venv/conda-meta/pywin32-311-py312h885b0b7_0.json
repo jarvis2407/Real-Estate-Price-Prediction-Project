@@ -9,7 +9,11 @@
     "vc >=14.2,<15",
     "vc14_runtime >=14.29.30133"
   ],
+<<<<<<< HEAD
   "extracted_package_dir": "C:\\Users\\lahya\\anaconda4\\pkgs\\pywin32-311-py312h885b0b7_0",
+=======
+  "extracted_package_dir": "c:\\Users\\rajas\\anaconda3\\pkgs\\pywin32-311-py312h885b0b7_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "files": [
     "Lib/site-packages/__pycache__/pythoncom.cpython-312.pyc",
     "Lib/site-packages/adodbapi/__init__.py",
@@ -1082,12 +1086,20 @@
   "fn": "pywin32-311-py312h885b0b7_0.conda",
   "license": "HPND AND BSD-3-Clause AND LGPL-2.1-or-later AND MIT",
   "link": {
+<<<<<<< HEAD
     "source": "C:\\Users\\lahya\\anaconda4\\pkgs\\pywin32-311-py312h885b0b7_0",
+=======
+    "source": "c:\\Users\\rajas\\anaconda3\\pkgs\\pywin32-311-py312h885b0b7_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "type": 1
   },
   "md5": "232b2b7d0997a0049b49f84a7b82888b",
   "name": "pywin32",
+<<<<<<< HEAD
   "package_tarball_full_path": "C:\\Users\\lahya\\anaconda4\\pkgs\\pywin32-311-py312h885b0b7_0.conda",
+=======
+  "package_tarball_full_path": "c:\\Users\\rajas\\anaconda3\\pkgs\\pywin32-311-py312h885b0b7_0.conda",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "paths_data": {
     "paths": [
       {

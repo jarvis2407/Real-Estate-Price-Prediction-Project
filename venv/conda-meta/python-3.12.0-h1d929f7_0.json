@@ -14,10 +14,17 @@
     "vc >=14.1,<15.0a0",
     "vs2015_runtime >=14.16.27012,<15.0a0",
     "xz >=5.4.2,<6.0a0",
+<<<<<<< HEAD
     "zlib >=1.2.13,<2.0.0a0",
     "pip"
   ],
   "extracted_package_dir": "C:\\Users\\lahya\\anaconda4\\pkgs\\python-3.12.0-h1d929f7_0",
+=======
+    "zlib >=1.2.13,<1.3.0a0",
+    "pip"
+  ],
+  "extracted_package_dir": "C:\\Users\\rajas\\anaconda3\\pkgs\\python-3.12.0-h1d929f7_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "files": [
     "DLLs/_asyncio.pyd",
     "DLLs/_bz2.pyd",
@@ -1918,12 +1925,20 @@
   "fn": "python-3.12.0-h1d929f7_0.conda",
   "license": "PSF-2.0",
   "link": {
+<<<<<<< HEAD
     "source": "C:\\Users\\lahya\\anaconda4\\pkgs\\python-3.12.0-h1d929f7_0",
+=======
+    "source": "C:\\Users\\rajas\\anaconda3\\pkgs\\python-3.12.0-h1d929f7_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "type": 1
   },
   "md5": "a3c0296d2fab2569f87d70a6f17f8f3d",
   "name": "python",
+<<<<<<< HEAD
   "package_tarball_full_path": "C:\\Users\\lahya\\anaconda4\\pkgs\\python-3.12.0-h1d929f7_0.conda",
+=======
+  "package_tarball_full_path": "C:\\Users\\rajas\\anaconda3\\pkgs\\python-3.12.0-h1d929f7_0.conda",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "paths_data": {
     "paths": [
       {

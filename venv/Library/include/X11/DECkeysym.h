@@ -52,6 +52,7 @@ SOFTWARE.
 
 /* two-key compose sequence initiators, chosen to map to Latin1 characters */
 
+<<<<<<< HEAD
 #define DXK_ring_accent              0x1000feb0
 #define DXK_circumflex_accent        0x1000fe5e
 #define DXK_cedilla_accent           0x1000fe2c
@@ -63,3 +64,16 @@ SOFTWARE.
 /* special keysym for LK2** "Remove" key on editing keypad */
 
 #define DXK_Remove                   0x1000ff00  /* Remove */
+=======
+#define DXK_ring_accent         0x1000FEB0
+#define DXK_circumflex_accent   0x1000FE5E
+#define DXK_cedilla_accent      0x1000FE2C
+#define DXK_acute_accent        0x1000FE27
+#define DXK_grave_accent        0x1000FE60
+#define DXK_tilde               0x1000FE7E
+#define DXK_diaeresis           0x1000FE22
+
+/* special keysym for LK2** "Remove" key on editing keypad */
+
+#define DXK_Remove	0x1000FF00   /* Remove */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a

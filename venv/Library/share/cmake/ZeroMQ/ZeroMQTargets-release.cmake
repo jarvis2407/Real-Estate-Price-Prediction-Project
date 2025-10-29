@@ -15,5 +15,18 @@ set_target_properties(libzmq PROPERTIES
 list(APPEND _cmake_import_check_targets libzmq )
 list(APPEND _cmake_import_check_files_for_libzmq "${_IMPORT_PREFIX}/lib/libzmq-mt-4_3_5.lib" "${_IMPORT_PREFIX}/bin/libzmq-mt-4_3_5.dll" )
 
+<<<<<<< HEAD
+=======
+# Import target "libzmq-static" for configuration "Release"
+set_property(TARGET libzmq-static APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(libzmq-static PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "C;CXX;RC"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libzmq-mt-s-4_3_5.lib"
+  )
+
+list(APPEND _cmake_import_check_targets libzmq-static )
+list(APPEND _cmake_import_check_files_for_libzmq-static "${_IMPORT_PREFIX}/lib/libzmq-mt-s-4_3_5.lib" )
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 # Commands beyond this point should not need to know the version.
 set(CMAKE_IMPORT_FILE_VERSION)

@@ -215,7 +215,11 @@ proc ::tk::ConsoleSource {} {
 	    [list [mc "Tcl Scripts"] .tcl] \
 	    [list [mc "All Files"] *]]]
     if {$filename ne ""} {
+<<<<<<< HEAD
 	set cmd [list source -encoding utf-8 $filename]
+=======
+	set cmd [list source $filename]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	if {[catch {consoleinterp eval $cmd} result]} {
 	    ConsoleOutput stderr "$result\n"
 	}

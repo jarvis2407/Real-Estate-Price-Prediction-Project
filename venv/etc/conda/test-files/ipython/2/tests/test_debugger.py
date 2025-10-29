@@ -7,9 +7,14 @@ import builtins
 import os
 import sys
 import platform
+<<<<<<< HEAD
 from pathlib import Path
 
 from tempfile import NamedTemporaryFile, TemporaryDirectory
+=======
+
+from tempfile import NamedTemporaryFile
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 from textwrap import dedent
 from unittest.mock import patch
 
@@ -486,7 +491,15 @@ def test_decorator_skip_disabled():
     child.close()
 
 
+<<<<<<< HEAD
 @pytest.mark.skip(reason="recently fail for unknown reason on CI")
+=======
+@pytest.mark.xfail(
+    sys.version_info.releaselevel not in ("final", "candidate"),
+    reason="fails on 3.13.dev",
+    strict=True,
+)
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 @pytest.mark.skipif(platform.python_implementation() == "PyPy", reason="issues on PyPy")
 @skip_win32
 def test_decorator_skip_with_breakpoint():
@@ -532,10 +545,14 @@ def test_decorator_skip_with_breakpoint():
 
         # From 3.13, set_trace()/breakpoint() stop on the line where they're
         # called, instead of the next line.
+<<<<<<< HEAD
         if sys.version_info >= (3, 14):
             child.expect_exact("     46     ipdb.set_trace()")
             extra_step = [("step", "--> 47     bar(3, 4)")]
         elif sys.version_info >= (3, 13):
+=======
+        if sys.version_info >= (3, 13):
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
             child.expect_exact("--> 46     ipdb.set_trace()")
             extra_step = [("step", "--> 47     bar(3, 4)")]
         else:
@@ -626,6 +643,7 @@ def test_where_erase_value():
     child.expect("ipdb>")
 
     child.close()
+<<<<<<< HEAD
 
 
 @skip_win32
@@ -937,3 +955,5 @@ def test_ignore_module_all_commands():
 
         child.sendline("continue")
         child.close()
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a

@@ -54,7 +54,11 @@ proc ttk::sizegrip::Press {W X Y} {
     #   just bail out -- there's no way to handle this cleanly.
     #
     if {[scan [wm geometry $top] "%dx%d+%d+%d" width height x y] != 4} {
+<<<<<<< HEAD
 	return
+=======
+	return;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 
     # Account for gridded geometry:

@@ -62,6 +62,7 @@ SOFTWARE.
  * Unicode position, as well as the official Unicode name of the
  * character.
  *
+<<<<<<< HEAD
  * Some keysyms map to a character already mapped by another keysym,
  * with compatible but more precise semantics, such as the keypad-
  * related keysyms. In this case, none of the keysym are deprecated.
@@ -71,6 +72,8 @@ SOFTWARE.
  *     #define XK_space                 0x0020  // U+0020 SPACE
  *     #define XK_KP_Space              0xff80  //<U+0020 SPACE>
  *
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  * Where the correspondence is either not one-to-one or semantically
  * unclear, the Unicode position and name are enclosed in
  * parentheses. Such legacy keysyms should be considered deprecated
@@ -90,6 +93,7 @@ SOFTWARE.
  * existing legacy keysym values in the range 0x0100 to 0x20ff.
  *
  * Where several mnemonic names are defined for the same keysym in this
+<<<<<<< HEAD
  * file, the first one listed is considered the "canonical" name. This
  * is the name that should be used when retrieving a keysym name from
  * its code. The next names are considered "aliases" to the canonical
@@ -136,12 +140,18 @@ SOFTWARE.
  *        #define XK_guillemetleft  0x00ab // U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
  *        // The following hypothetical name is deprecated because guillemetleft come before.
  *        #define XK_guillemetleft2 0x00ab
+=======
+ * file, all but the first one listed should be considered deprecated.
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  *
  * Mnemonic names for keysyms are defined in this file with lines
  * that match one of these Perl regular expressions:
  *
  *    /^\#define XK_([a-zA-Z_0-9]+)\s+0x([0-9a-f]+)\s*\/\* U\+([0-9A-F]{4,6}) (.*) \*\/\s*$/
+<<<<<<< HEAD
  *    /^\#define XK_([a-zA-Z_0-9]+)\s+0x([0-9a-f]+)\s*\/\*<U\+([0-9A-F]{4,6}) (.*)>\*\/\s*$/
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  *    /^\#define XK_([a-zA-Z_0-9]+)\s+0x([0-9a-f]+)\s*\/\*\(U\+([0-9A-F]{4,6}) (.*)\)\*\/\s*$/
  *    /^\#define XK_([a-zA-Z_0-9]+)\s+0x([0-9a-f]+)\s*(\/\*\s*(.*)\s*\*\/)?\s*$/
  *
@@ -165,6 +175,7 @@ SOFTWARE.
  *   - the protocol specification in specs/keysyms.xml in this repo
  *     https://gitlab.freedesktop.org/xorg/proto/xorgproto
  *
+<<<<<<< HEAD
  * Before removing or changing the order of the keysyms, please consider
  * the following: it is very difficult to know what keysyms are used and
  * how.
@@ -186,6 +197,8 @@ SOFTWARE.
  * some keysyms may have their first listed name deprecated during the
  * period of transition. Once this period is over, the deprecated name
  * should be moved after the new canonical name.
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  */
 
 #define XK_VoidSymbol                  0xffffff  /* Void symbol */
@@ -197,6 +210,7 @@ SOFTWARE.
  * tables in client code).
  */
 
+<<<<<<< HEAD
 #define XK_BackSpace                     0xff08  /* U+0008 BACKSPACE */
 #define XK_Tab                           0xff09  /* U+0009 CHARACTER TABULATION */
 #define XK_Linefeed                      0xff0a  /* U+000A LINE FEED */
@@ -207,6 +221,18 @@ SOFTWARE.
 #define XK_Sys_Req                       0xff15
 #define XK_Escape                        0xff1b  /* U+001B ESCAPE */
 #define XK_Delete                        0xffff  /* U+007F DELETE */
+=======
+#define XK_BackSpace                     0xff08  /* Back space, back char */
+#define XK_Tab                           0xff09
+#define XK_Linefeed                      0xff0a  /* Linefeed, LF */
+#define XK_Clear                         0xff0b
+#define XK_Return                        0xff0d  /* Return, enter */
+#define XK_Pause                         0xff13  /* Pause, hold */
+#define XK_Scroll_Lock                   0xff14
+#define XK_Sys_Req                       0xff15
+#define XK_Escape                        0xff1b
+#define XK_Delete                        0xffff  /* Delete, rubout */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 
@@ -223,7 +249,11 @@ SOFTWARE.
 #define XK_Kanji                         0xff21  /* Kanji, Kanji convert */
 #define XK_Muhenkan                      0xff22  /* Cancel Conversion */
 #define XK_Henkan_Mode                   0xff23  /* Start/Stop Conversion */
+<<<<<<< HEAD
 #define XK_Henkan                        0xff23  /* non-deprecated alias for Henkan_Mode */
+=======
+#define XK_Henkan                        0xff23  /* Alias for Henkan_Mode */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Romaji                        0xff24  /* to Romaji */
 #define XK_Hiragana                      0xff25  /* to Hiragana */
 #define XK_Katakana                      0xff26  /* to Katakana */
@@ -251,9 +281,15 @@ SOFTWARE.
 #define XK_Right                         0xff53  /* Move right, right arrow */
 #define XK_Down                          0xff54  /* Move down, down arrow */
 #define XK_Prior                         0xff55  /* Prior, previous */
+<<<<<<< HEAD
 #define XK_Page_Up                       0xff55  /* deprecated alias for Prior */
 #define XK_Next                          0xff56  /* Next */
 #define XK_Page_Down                     0xff56  /* deprecated alias for Next */
+=======
+#define XK_Page_Up                       0xff55
+#define XK_Next                          0xff56  /* Next */
+#define XK_Page_Down                     0xff56
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_End                           0xff57  /* EOL */
 #define XK_Begin                         0xff58  /* BOL */
 
@@ -263,6 +299,10 @@ SOFTWARE.
 #define XK_Win_R		0xFF5C	/* Right-hand Windows */
 #define XK_App			0xFF5D	/* Menu key */
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 /* Misc functions */
 
 #define XK_Select                        0xff60  /* Select, mark */
@@ -277,14 +317,24 @@ SOFTWARE.
 #define XK_Help                          0xff6a  /* Help */
 #define XK_Break                         0xff6b
 #define XK_Mode_switch                   0xff7e  /* Character set switch */
+<<<<<<< HEAD
 #define XK_script_switch                 0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_script_switch                 0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Num_Lock                      0xff7f
 
 /* Keypad functions, keypad numbers cleverly chosen to map to ASCII */
 
+<<<<<<< HEAD
 #define XK_KP_Space                      0xff80  /*<U+0020 SPACE>*/
 #define XK_KP_Tab                        0xff89  /*<U+0009 CHARACTER TABULATION>*/
 #define XK_KP_Enter                      0xff8d  /*<U+000D CARRIAGE RETURN>*/
+=======
+#define XK_KP_Space                      0xff80  /* Space */
+#define XK_KP_Tab                        0xff89
+#define XK_KP_Enter                      0xff8d  /* Enter */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_KP_F1                         0xff91  /* PF1, KP_A, ... */
 #define XK_KP_F2                         0xff92
 #define XK_KP_F3                         0xff93
@@ -295,13 +345,20 @@ SOFTWARE.
 #define XK_KP_Right                      0xff98
 #define XK_KP_Down                       0xff99
 #define XK_KP_Prior                      0xff9a
+<<<<<<< HEAD
 #define XK_KP_Page_Up                    0xff9a  /* deprecated alias for KP_Prior */
 #define XK_KP_Next                       0xff9b
 #define XK_KP_Page_Down                  0xff9b  /* deprecated alias for KP_Next */
+=======
+#define XK_KP_Page_Up                    0xff9a
+#define XK_KP_Next                       0xff9b
+#define XK_KP_Page_Down                  0xff9b
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_KP_End                        0xff9c
 #define XK_KP_Begin                      0xff9d
 #define XK_KP_Insert                     0xff9e
 #define XK_KP_Delete                     0xff9f
+<<<<<<< HEAD
 #define XK_KP_Equal                      0xffbd  /*<U+003D EQUALS SIGN>*/
 #define XK_KP_Multiply                   0xffaa  /*<U+002A ASTERISK>*/
 #define XK_KP_Add                        0xffab  /*<U+002B PLUS SIGN>*/
@@ -320,6 +377,26 @@ SOFTWARE.
 #define XK_KP_7                          0xffb7  /*<U+0037 DIGIT SEVEN>*/
 #define XK_KP_8                          0xffb8  /*<U+0038 DIGIT EIGHT>*/
 #define XK_KP_9                          0xffb9  /*<U+0039 DIGIT NINE>*/
+=======
+#define XK_KP_Equal                      0xffbd  /* Equals */
+#define XK_KP_Multiply                   0xffaa
+#define XK_KP_Add                        0xffab
+#define XK_KP_Separator                  0xffac  /* Separator, often comma */
+#define XK_KP_Subtract                   0xffad
+#define XK_KP_Decimal                    0xffae
+#define XK_KP_Divide                     0xffaf
+
+#define XK_KP_0                          0xffb0
+#define XK_KP_1                          0xffb1
+#define XK_KP_2                          0xffb2
+#define XK_KP_3                          0xffb3
+#define XK_KP_4                          0xffb4
+#define XK_KP_5                          0xffb5
+#define XK_KP_6                          0xffb6
+#define XK_KP_7                          0xffb7
+#define XK_KP_8                          0xffb8
+#define XK_KP_9                          0xffb9
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 
@@ -341,6 +418,7 @@ SOFTWARE.
 #define XK_F9                            0xffc6
 #define XK_F10                           0xffc7
 #define XK_F11                           0xffc8
+<<<<<<< HEAD
 #define XK_L1                            0xffc8  /* deprecated alias for F11 */
 #define XK_F12                           0xffc9
 #define XK_L2                            0xffc9  /* deprecated alias for F12 */
@@ -390,6 +468,57 @@ SOFTWARE.
 #define XK_R14                           0xffdf  /* deprecated alias for F34 */
 #define XK_F35                           0xffe0
 #define XK_R15                           0xffe0  /* deprecated alias for F35 */
+=======
+#define XK_L1                            0xffc8
+#define XK_F12                           0xffc9
+#define XK_L2                            0xffc9
+#define XK_F13                           0xffca
+#define XK_L3                            0xffca
+#define XK_F14                           0xffcb
+#define XK_L4                            0xffcb
+#define XK_F15                           0xffcc
+#define XK_L5                            0xffcc
+#define XK_F16                           0xffcd
+#define XK_L6                            0xffcd
+#define XK_F17                           0xffce
+#define XK_L7                            0xffce
+#define XK_F18                           0xffcf
+#define XK_L8                            0xffcf
+#define XK_F19                           0xffd0
+#define XK_L9                            0xffd0
+#define XK_F20                           0xffd1
+#define XK_L10                           0xffd1
+#define XK_F21                           0xffd2
+#define XK_R1                            0xffd2
+#define XK_F22                           0xffd3
+#define XK_R2                            0xffd3
+#define XK_F23                           0xffd4
+#define XK_R3                            0xffd4
+#define XK_F24                           0xffd5
+#define XK_R4                            0xffd5
+#define XK_F25                           0xffd6
+#define XK_R5                            0xffd6
+#define XK_F26                           0xffd7
+#define XK_R6                            0xffd7
+#define XK_F27                           0xffd8
+#define XK_R7                            0xffd8
+#define XK_F28                           0xffd9
+#define XK_R8                            0xffd9
+#define XK_F29                           0xffda
+#define XK_R9                            0xffda
+#define XK_F30                           0xffdb
+#define XK_R10                           0xffdb
+#define XK_F31                           0xffdc
+#define XK_R11                           0xffdc
+#define XK_F32                           0xffdd
+#define XK_R12                           0xffdd
+#define XK_F33                           0xffde
+#define XK_R13                           0xffde
+#define XK_F34                           0xffdf
+#define XK_R14                           0xffdf
+#define XK_F35                           0xffe0
+#define XK_R15                           0xffe0
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 /* Modifiers */
 
@@ -425,7 +554,11 @@ SOFTWARE.
 #define XK_ISO_Level5_Shift              0xfe11
 #define XK_ISO_Level5_Latch              0xfe12
 #define XK_ISO_Level5_Lock               0xfe13
+<<<<<<< HEAD
 #define XK_ISO_Group_Shift               0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_ISO_Group_Shift               0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_ISO_Group_Latch               0xfe06
 #define XK_ISO_Group_Lock                0xfe07
 #define XK_ISO_Next_Group                0xfe08
@@ -463,7 +596,11 @@ SOFTWARE.
 #define XK_dead_acute                    0xfe51
 #define XK_dead_circumflex               0xfe52
 #define XK_dead_tilde                    0xfe53
+<<<<<<< HEAD
 #define XK_dead_perispomeni              0xfe53  /* non-deprecated alias for dead_tilde */
+=======
+#define XK_dead_perispomeni              0xfe53  /* alias for dead_tilde */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_dead_macron                   0xfe54
 #define XK_dead_breve                    0xfe55
 #define XK_dead_abovedot                 0xfe56
@@ -481,9 +618,15 @@ SOFTWARE.
 #define XK_dead_horn                     0xfe62
 #define XK_dead_stroke                   0xfe63
 #define XK_dead_abovecomma               0xfe64
+<<<<<<< HEAD
 #define XK_dead_psili                    0xfe64  /* non-deprecated alias for dead_abovecomma */
 #define XK_dead_abovereversedcomma       0xfe65
 #define XK_dead_dasia                    0xfe65  /* non-deprecated alias for dead_abovereversedcomma */
+=======
+#define XK_dead_psili                    0xfe64  /* alias for dead_abovecomma */
+#define XK_dead_abovereversedcomma       0xfe65
+#define XK_dead_dasia                    0xfe65  /* alias for dead_abovereversedcomma */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_dead_doublegrave              0xfe66
 #define XK_dead_belowring                0xfe67
 #define XK_dead_belowmacron              0xfe68
@@ -512,6 +655,7 @@ SOFTWARE.
 #define XK_dead_O                        0xfe87
 #define XK_dead_u                        0xfe88
 #define XK_dead_U                        0xfe89
+<<<<<<< HEAD
 #define XK_dead_small_schwa              0xfe8a  /* deprecated alias for dead_schwa */
 #define XK_dead_schwa                    0xfe8a
 #define XK_dead_capital_schwa            0xfe8b  /* deprecated alias for dead_SCHWA */
@@ -519,6 +663,14 @@ SOFTWARE.
 
 #define XK_dead_greek                    0xfe8c
 #define XK_dead_hamza                    0xfe8d
+=======
+#define XK_dead_schwa                    0xfe8a
+#define XK_dead_SCHWA                    0xfe8b
+#define XK_dead_small_schwa              0xfe8a  /* deprecated, remove in 2025 */
+#define XK_dead_capital_schwa            0xfe8b  /* deprecated, remove in 2025 */
+
+#define XK_dead_greek                    0xfe8c
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 #define XK_First_Virtual_Screen          0xfed0
 #define XK_Prev_Virtual_Screen           0xfed1
@@ -734,8 +886,13 @@ SOFTWARE.
 #define XK_diaeresis                     0x00a8  /* U+00A8 DIAERESIS */
 #define XK_copyright                     0x00a9  /* U+00A9 COPYRIGHT SIGN */
 #define XK_ordfeminine                   0x00aa  /* U+00AA FEMININE ORDINAL INDICATOR */
+<<<<<<< HEAD
 #define XK_guillemotleft                 0x00ab  /* deprecated alias for guillemetleft (misspelling) */
 #define XK_guillemetleft                 0x00ab  /* U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK */
+=======
+#define XK_guillemetleft                 0x00ab  /* U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK */
+#define XK_guillemotleft                 0x00ab  /* deprecated misspelling */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_notsign                       0x00ac  /* U+00AC NOT SIGN */
 #define XK_hyphen                        0x00ad  /* U+00AD SOFT HYPHEN */
 #define XK_registered                    0x00ae  /* U+00AE REGISTERED SIGN */
@@ -750,10 +907,17 @@ SOFTWARE.
 #define XK_periodcentered                0x00b7  /* U+00B7 MIDDLE DOT */
 #define XK_cedilla                       0x00b8  /* U+00B8 CEDILLA */
 #define XK_onesuperior                   0x00b9  /* U+00B9 SUPERSCRIPT ONE */
+<<<<<<< HEAD
 #define XK_masculine                     0x00ba  /* deprecated alias for ordmasculine (inconsistent name) */
 #define XK_ordmasculine                  0x00ba  /* U+00BA MASCULINE ORDINAL INDICATOR */
 #define XK_guillemotright                0x00bb  /* deprecated alias for guillemetright (misspelling) */
 #define XK_guillemetright                0x00bb  /* U+00BB RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK */
+=======
+#define XK_ordmasculine                  0x00ba  /* U+00BA MASCULINE ORDINAL INDICATOR */
+#define XK_masculine                     0x00ba  /* deprecated inconsistent name */
+#define XK_guillemetright                0x00bb  /* U+00BB RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK */
+#define XK_guillemotright                0x00bb  /* deprecated misspelling */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_onequarter                    0x00bc  /* U+00BC VULGAR FRACTION ONE QUARTER */
 #define XK_onehalf                       0x00bd  /* U+00BD VULGAR FRACTION ONE HALF */
 #define XK_threequarters                 0x00be  /* U+00BE VULGAR FRACTION THREE QUARTERS */
@@ -784,7 +948,11 @@ SOFTWARE.
 #define XK_Odiaeresis                    0x00d6  /* U+00D6 LATIN CAPITAL LETTER O WITH DIAERESIS */
 #define XK_multiply                      0x00d7  /* U+00D7 MULTIPLICATION SIGN */
 #define XK_Oslash                        0x00d8  /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
+<<<<<<< HEAD
 #define XK_Ooblique                      0x00d8  /* deprecated alias for Oslash */
+=======
+#define XK_Ooblique                      0x00d8  /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Ugrave                        0x00d9  /* U+00D9 LATIN CAPITAL LETTER U WITH GRAVE */
 #define XK_Uacute                        0x00da  /* U+00DA LATIN CAPITAL LETTER U WITH ACUTE */
 #define XK_Ucircumflex                   0x00db  /* U+00DB LATIN CAPITAL LETTER U WITH CIRCUMFLEX */
@@ -818,7 +986,11 @@ SOFTWARE.
 #define XK_odiaeresis                    0x00f6  /* U+00F6 LATIN SMALL LETTER O WITH DIAERESIS */
 #define XK_division                      0x00f7  /* U+00F7 DIVISION SIGN */
 #define XK_oslash                        0x00f8  /* U+00F8 LATIN SMALL LETTER O WITH STROKE */
+<<<<<<< HEAD
 #define XK_ooblique                      0x00f8  /* deprecated alias for oslash */
+=======
+#define XK_ooblique                      0x00f8  /* U+00F8 LATIN SMALL LETTER O WITH STROKE */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_ugrave                        0x00f9  /* U+00F9 LATIN SMALL LETTER U WITH GRAVE */
 #define XK_uacute                        0x00fa  /* U+00FA LATIN SMALL LETTER U WITH ACUTE */
 #define XK_ucircumflex                   0x00fb  /* U+00FB LATIN SMALL LETTER U WITH CIRCUMFLEX */
@@ -969,6 +1141,7 @@ SOFTWARE.
 #endif /* XK_LATIN4 */
 
 /*
+<<<<<<< HEAD
  * Latin 8
  */
 #ifdef XK_LATIN8
@@ -1001,6 +1174,8 @@ SOFTWARE.
 #endif /* XK_LATIN8 */
 
 /*
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  * Latin 9
  * Byte 3 = 0x13
  */
@@ -1086,7 +1261,11 @@ SOFTWARE.
 #define XK_kana_N                        0x04dd  /* U+30F3 KATAKANA LETTER N */
 #define XK_voicedsound                   0x04de  /* U+309B KATAKANA-HIRAGANA VOICED SOUND MARK */
 #define XK_semivoicedsound               0x04df  /* U+309C KATAKANA-HIRAGANA SEMI-VOICED SOUND MARK */
+<<<<<<< HEAD
 #define XK_kana_switch                   0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_kana_switch                   0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #endif /* XK_KATAKANA */
 
 /*
@@ -1095,6 +1274,7 @@ SOFTWARE.
  */
 
 #ifdef XK_ARABIC
+<<<<<<< HEAD
 #define XK_Farsi_0                    0x10006f0  /* U+06F0 EXTENDED ARABIC-INDIC DIGIT ZERO */
 #define XK_Farsi_1                    0x10006f1  /* U+06F1 EXTENDED ARABIC-INDIC DIGIT ONE */
 #define XK_Farsi_2                    0x10006f2  /* U+06F2 EXTENDED ARABIC-INDIC DIGIT TWO */
@@ -1124,6 +1304,9 @@ SOFTWARE.
 #define XK_Arabic_7                   0x1000667  /* U+0667 ARABIC-INDIC DIGIT SEVEN */
 #define XK_Arabic_8                   0x1000668  /* U+0668 ARABIC-INDIC DIGIT EIGHT */
 #define XK_Arabic_9                   0x1000669  /* U+0669 ARABIC-INDIC DIGIT NINE */
+=======
+#define XK_Arabic_comma                  0x05ac  /* U+060C ARABIC COMMA */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Arabic_semicolon              0x05bb  /* U+061B ARABIC SEMICOLON */
 #define XK_Arabic_question_mark          0x05bf  /* U+061F ARABIC QUESTION MARK */
 #define XK_Arabic_hamza                  0x05c1  /* U+0621 ARABIC LETTER HAMZA */
@@ -1172,6 +1355,7 @@ SOFTWARE.
 #define XK_Arabic_kasra                  0x05f0  /* U+0650 ARABIC KASRA */
 #define XK_Arabic_shadda                 0x05f1  /* U+0651 ARABIC SHADDA */
 #define XK_Arabic_sukun                  0x05f2  /* U+0652 ARABIC SUKUN */
+<<<<<<< HEAD
 #define XK_Arabic_madda_above         0x1000653  /* U+0653 ARABIC MADDAH ABOVE */
 #define XK_Arabic_hamza_above         0x1000654  /* U+0654 ARABIC HAMZA ABOVE */
 #define XK_Arabic_hamza_below         0x1000655  /* U+0655 ARABIC HAMZA BELOW */
@@ -1186,6 +1370,9 @@ SOFTWARE.
 #define XK_Arabic_yeh_baree           0x10006d2  /* U+06D2 ARABIC LETTER YEH BARREE */
 #define XK_Arabic_heh_goal            0x10006c1  /* U+06C1 ARABIC LETTER HEH GOAL */
 #define XK_Arabic_switch                 0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_Arabic_switch                 0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #endif /* XK_ARABIC */
 
 /*
@@ -1193,6 +1380,7 @@ SOFTWARE.
  * Byte 3 = 6
  */
 #ifdef XK_CYRILLIC
+<<<<<<< HEAD
 #define XK_Cyrillic_GHE_bar           0x1000492  /* U+0492 CYRILLIC CAPITAL LETTER GHE WITH STROKE */
 #define XK_Cyrillic_ghe_bar           0x1000493  /* U+0493 CYRILLIC SMALL LETTER GHE WITH STROKE */
 #define XK_Cyrillic_ZHE_descender     0x1000496  /* U+0496 CYRILLIC CAPITAL LETTER ZHE WITH DESCENDER */
@@ -1225,6 +1413,8 @@ SOFTWARE.
 #define XK_Cyrillic_U_macron          0x10004ee  /* U+04EE CYRILLIC CAPITAL LETTER U WITH MACRON */
 #define XK_Cyrillic_u_macron          0x10004ef  /* U+04EF CYRILLIC SMALL LETTER U WITH MACRON */
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Serbian_dje                   0x06a1  /* U+0452 CYRILLIC SMALL LETTER DJE */
 #define XK_Macedonia_gje                 0x06a2  /* U+0453 CYRILLIC SMALL LETTER GJE */
 #define XK_Cyrillic_io                   0x06a3  /* U+0451 CYRILLIC SMALL LETTER IO */
@@ -1348,7 +1538,11 @@ SOFTWARE.
 #define XK_Greek_ETAaccent               0x07a3  /* U+0389 GREEK CAPITAL LETTER ETA WITH TONOS */
 #define XK_Greek_IOTAaccent              0x07a4  /* U+038A GREEK CAPITAL LETTER IOTA WITH TONOS */
 #define XK_Greek_IOTAdieresis            0x07a5  /* U+03AA GREEK CAPITAL LETTER IOTA WITH DIALYTIKA */
+<<<<<<< HEAD
 #define XK_Greek_IOTAdiaeresis           0x07a5  /* deprecated (old typo) */
+=======
+#define XK_Greek_IOTAdiaeresis           0x07a5  /* old typo */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Greek_OMICRONaccent           0x07a7  /* U+038C GREEK CAPITAL LETTER OMICRON WITH TONOS */
 #define XK_Greek_UPSILONaccent           0x07a8  /* U+038E GREEK CAPITAL LETTER UPSILON WITH TONOS */
 #define XK_Greek_UPSILONdieresis         0x07a9  /* U+03AB GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA */
@@ -1377,7 +1571,11 @@ SOFTWARE.
 #define XK_Greek_IOTA                    0x07c9  /* U+0399 GREEK CAPITAL LETTER IOTA */
 #define XK_Greek_KAPPA                   0x07ca  /* U+039A GREEK CAPITAL LETTER KAPPA */
 #define XK_Greek_LAMDA                   0x07cb  /* U+039B GREEK CAPITAL LETTER LAMDA */
+<<<<<<< HEAD
 #define XK_Greek_LAMBDA                  0x07cb  /* non-deprecated alias for Greek_LAMDA */
+=======
+#define XK_Greek_LAMBDA                  0x07cb  /* U+039B GREEK CAPITAL LETTER LAMDA */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Greek_MU                      0x07cc  /* U+039C GREEK CAPITAL LETTER MU */
 #define XK_Greek_NU                      0x07cd  /* U+039D GREEK CAPITAL LETTER NU */
 #define XK_Greek_XI                      0x07ce  /* U+039E GREEK CAPITAL LETTER XI */
@@ -1402,7 +1600,11 @@ SOFTWARE.
 #define XK_Greek_iota                    0x07e9  /* U+03B9 GREEK SMALL LETTER IOTA */
 #define XK_Greek_kappa                   0x07ea  /* U+03BA GREEK SMALL LETTER KAPPA */
 #define XK_Greek_lamda                   0x07eb  /* U+03BB GREEK SMALL LETTER LAMDA */
+<<<<<<< HEAD
 #define XK_Greek_lambda                  0x07eb  /* non-deprecated alias for Greek_lamda */
+=======
+#define XK_Greek_lambda                  0x07eb  /* U+03BB GREEK SMALL LETTER LAMDA */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Greek_mu                      0x07ec  /* U+03BC GREEK SMALL LETTER MU */
 #define XK_Greek_nu                      0x07ed  /* U+03BD GREEK SMALL LETTER NU */
 #define XK_Greek_xi                      0x07ee  /* U+03BE GREEK SMALL LETTER XI */
@@ -1417,7 +1619,11 @@ SOFTWARE.
 #define XK_Greek_chi                     0x07f7  /* U+03C7 GREEK SMALL LETTER CHI */
 #define XK_Greek_psi                     0x07f8  /* U+03C8 GREEK SMALL LETTER PSI */
 #define XK_Greek_omega                   0x07f9  /* U+03C9 GREEK SMALL LETTER OMEGA */
+<<<<<<< HEAD
 #define XK_Greek_switch                  0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_Greek_switch                  0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #endif /* XK_GREEK */
 
 /*
@@ -1677,7 +1883,11 @@ SOFTWARE.
 #define XK_hebrew_shin                   0x0cf9  /* U+05E9 HEBREW LETTER SHIN */
 #define XK_hebrew_taw                    0x0cfa  /* U+05EA HEBREW LETTER TAV */
 #define XK_hebrew_taf                    0x0cfa  /* deprecated */
+<<<<<<< HEAD
 #define XK_Hebrew_switch                 0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_Hebrew_switch                 0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #endif /* XK_HEBREW */
 
 /*
@@ -1744,7 +1954,11 @@ SOFTWARE.
 #define XK_Thai_sarau                    0x0dd8  /* U+0E38 THAI CHARACTER SARA U */
 #define XK_Thai_sarauu                   0x0dd9  /* U+0E39 THAI CHARACTER SARA UU */
 #define XK_Thai_phinthu                  0x0dda  /* U+0E3A THAI CHARACTER PHINTHU */
+<<<<<<< HEAD
 #define XK_Thai_maihanakat_maitho        0x0dde  /*(U+0E3E Unassigned code point)*/
+=======
+#define XK_Thai_maihanakat_maitho        0x0dde
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #define XK_Thai_baht                     0x0ddf  /* U+0E3F THAI CURRENCY SYMBOL BAHT */
 #define XK_Thai_sarae                    0x0de0  /* U+0E40 THAI CHARACTER SARA E */
 #define XK_Thai_saraae                   0x0de1  /* U+0E41 THAI CHARACTER SARA AE */
@@ -1794,7 +2008,11 @@ SOFTWARE.
 #define XK_Hangul_MultipleCandidate      0xff3d  /* Multiple candidate */
 #define XK_Hangul_PreviousCandidate      0xff3e  /* Previous candidate */
 #define XK_Hangul_Special                0xff3f  /* Special symbols */
+<<<<<<< HEAD
 #define XK_Hangul_switch                 0xff7e  /* non-deprecated alias for Mode_switch */
+=======
+#define XK_Hangul_switch                 0xff7e  /* Alias for mode_switch */
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 /* Hangul Consonant Characters */
 #define XK_Hangul_Kiyeog                 0x0ea1  /* U+3131 HANGUL LETTER KIYEOK */
@@ -1903,6 +2121,7 @@ SOFTWARE.
 
 #endif /* XK_KOREAN */
 
+<<<<<<< HEAD
 /*
  * Armenian
  */
@@ -2231,6 +2450,12 @@ SOFTWARE.
 #define XK_stricteq                   0x1002263  /* U+2263 STRICTLY EQUIVALENT TO */
 #endif /* XK_MATHEMATICAL */
 
+=======
+#ifdef XK_CURRENCY
+#define XK_EuroSign                      0x20ac  /* U+20AC EURO SIGN */
+#endif /* XK_CURRENCY */
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 #ifdef XK_BRAILLE
 #define XK_braille_dot_1                 0xfff1
 #define XK_braille_dot_2                 0xfff2
@@ -2242,6 +2467,7 @@ SOFTWARE.
 #define XK_braille_dot_8                 0xfff8
 #define XK_braille_dot_9                 0xfff9
 #define XK_braille_dot_10                0xfffa
+<<<<<<< HEAD
 #define XK_braille_blank              0x1002800  /* U+2800 BRAILLE PATTERN BLANK */
 #define XK_braille_dots_1             0x1002801  /* U+2801 BRAILLE PATTERN DOTS-1 */
 #define XK_braille_dots_2             0x1002802  /* U+2802 BRAILLE PATTERN DOTS-2 */
@@ -2588,6 +2814,10 @@ SOFTWARE.
 #define XK_Sinh_kunddaliya            0x1000df4  /* U+0DF4 SINHALA PUNCTUATION KUNDDALIYA */
 #endif /* XK_SINHALA */
 
+=======
+#endif /* XK_BRAILLE */
+
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 /* Multimedia keys, defined same as on Linux
  * /usr/include/pkg/libxkbcommon/xkbcommon/xkbcommon-keysyms.h
  */

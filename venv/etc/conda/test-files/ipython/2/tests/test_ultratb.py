@@ -437,6 +437,7 @@ except Exception as e:
             ip.run_cell("%xmode Verbose")
 
 
+<<<<<<< HEAD
 class ExceptionMessagePreferenceTest(unittest.TestCase):
     """
     Test that exception string representation is preferred over .msg attribute
@@ -455,6 +456,8 @@ class ExceptionMessagePreferenceTest(unittest.TestCase):
         ip.run_cell("%xmode context")
 
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 # ----------------------------------------------------------------------------
 
 

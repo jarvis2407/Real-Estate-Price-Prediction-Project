@@ -31,7 +31,11 @@ proc ::platform::shell::generic {shell} {
     # conflict with this one.
     lappend code {package forget platform}
     # Inject our platform package
+<<<<<<< HEAD
     lappend code [list source -encoding utf-8 $base]
+=======
+    lappend code [list source $base]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     # Query and print the architecture
     lappend code {puts [platform::generic]}
     # And done
@@ -56,7 +60,11 @@ proc ::platform::shell::identify {shell} {
     # conflict with this one.
     lappend code {package forget platform}
     # Inject our platform package
+<<<<<<< HEAD
     lappend code [list source -encoding utf-8 $base]
+=======
+    lappend code [list source $base]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     # Query and print the architecture
     lappend code {puts [platform::identify]}
     # And done
@@ -131,7 +139,11 @@ proc ::platform::shell::RUN {shell code} {
     set e [TEMP]
 
     set code [catch {
+<<<<<<< HEAD
 	exec $shell $c 2> $e
+=======
+        exec $shell $c 2> $e
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     } res]
 
     file delete $c

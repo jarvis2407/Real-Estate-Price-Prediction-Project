@@ -31,7 +31,10 @@ extern "C" {
 # define OSSL_SELF_TEST_TYPE_CRNG               "Continuous_RNG_Test"
 # define OSSL_SELF_TEST_TYPE_PCT                "Conditional_PCT"
 # define OSSL_SELF_TEST_TYPE_PCT_KAT            "Conditional_KAT"
+<<<<<<< HEAD
 # define OSSL_SELF_TEST_TYPE_PCT_IMPORT         "Import_PCT"
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 # define OSSL_SELF_TEST_TYPE_KAT_INTEGRITY      "KAT_Integrity"
 # define OSSL_SELF_TEST_TYPE_KAT_CIPHER         "KAT_Cipher"
 # define OSSL_SELF_TEST_TYPE_KAT_ASYM_CIPHER    "KAT_AsymmetricCipher"

@@ -49,7 +49,10 @@
 # define PROV_R_FINAL_CALL_OUT_OF_ORDER                   237
 # define PROV_R_FIPS_MODULE_CONDITIONAL_ERROR             227
 # define PROV_R_FIPS_MODULE_ENTERING_ERROR_STATE          224
+<<<<<<< HEAD
 # define PROV_R_FIPS_MODULE_IMPORT_PCT_ERROR              253
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 # define PROV_R_FIPS_MODULE_IN_ERROR_STATE                225
 # define PROV_R_GENERATE_ERROR                            191
 # define PROV_R_ILLEGAL_OR_UNSUPPORTED_PADDING_MODE       165

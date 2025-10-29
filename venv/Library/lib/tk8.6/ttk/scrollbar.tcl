@@ -90,7 +90,11 @@ proc ttk::scrollbar::Drag {w x y} {
     if {![info exists State(first)]} {
     	# Initial buttonpress was not on the thumb,
 	# or something screwy has happened.  In either case, ignore:
+<<<<<<< HEAD
 	return
+=======
+	return;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
     set xDelta [expr {$x - $State(xPress)}]
     set yDelta [expr {$y - $State(yPress)}]

@@ -6,7 +6,11 @@
   "depends": [
     "python >=3.9"
   ],
+<<<<<<< HEAD
   "extracted_package_dir": "C:\\Users\\lahya\\anaconda4\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004",
+=======
+  "extracted_package_dir": "c:\\Users\\rajas\\anaconda3\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "files": [
     "Lib/site-packages/pickleshare-0.7.5.dist-info/INSTALLER",
     "Lib/site-packages/pickleshare-0.7.5.dist-info/LICENSE",
@@ -22,13 +26,21 @@
   "fn": "pickleshare-0.7.5-pyhd8ed1ab_1004.conda",
   "license": "MIT",
   "link": {
+<<<<<<< HEAD
     "source": "C:\\Users\\lahya\\anaconda4\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004",
+=======
+    "source": "c:\\Users\\rajas\\anaconda3\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "type": 1
   },
   "md5": "11a9d1d09a3615fc07c3faf79bc0b943",
   "name": "pickleshare",
   "noarch": "python",
+<<<<<<< HEAD
   "package_tarball_full_path": "C:\\Users\\lahya\\anaconda4\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004.conda",
+=======
+  "package_tarball_full_path": "c:\\Users\\rajas\\anaconda3\\pkgs\\pickleshare-0.7.5-pyhd8ed1ab_1004.conda",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "package_type": "noarch_python",
   "paths_data": {
     "paths": [

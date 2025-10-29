@@ -6,7 +6,11 @@
  *	interfaces are not guaranteed to remain the same between
  *	versions.  Use at your own risk.
  *
+<<<<<<< HEAD
  * Copyright (c) 1998-1999 Scriptics Corporation.
+=======
+ * Copyright (c) 1998-1999 by Scriptics Corporation.
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
  * All rights reserved.
  */
 

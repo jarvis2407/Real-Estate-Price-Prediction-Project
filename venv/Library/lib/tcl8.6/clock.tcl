@@ -31,7 +31,11 @@ uplevel \#0 {
 # library code can find message catalogs and time zone definition files.
 
 namespace eval ::tcl::clock \
+<<<<<<< HEAD
     [list variable LibDir [info library]]
+=======
+    [list variable LibDir [file dirname [info script]]]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 #----------------------------------------------------------------------
 #
@@ -554,8 +558,11 @@ proc ::tcl::clock::Initialize {} {
 	pdt	-0700 \
 	yst	-0900 \
 	ydt	-0800 \
+<<<<<<< HEAD
 	akst	-0900 \
 	akdt	-0800 \
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	hst	-1000 \
 	hdt	-0900 \
 	cat	-1000 \

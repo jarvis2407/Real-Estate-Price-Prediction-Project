@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 prefix=c:/Users/lahya/OneDrive/Documents/harsha/venv/Library 
+=======
+prefix=c:/Users/rajas/Real-Estate-Price-Prediction-Project/venv/Library 
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
@@ -6,4 +10,8 @@ includedir=${prefix}/include
 Name: OpenSSL
 Description: Secure Sockets Layer and cryptography libraries and tools
 Requires: libssl libcrypto
+<<<<<<< HEAD
 Version: 3.5.4 
+=======
+Version: 3.5.2 
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a

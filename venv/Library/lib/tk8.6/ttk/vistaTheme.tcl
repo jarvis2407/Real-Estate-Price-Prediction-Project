@@ -22,10 +22,19 @@ namespace eval ttk::theme::vista {
 	    -selectforeground SystemHighlightText \
 	    -selectbackground SystemHighlight \
 	    -insertcolor SystemWindowText \
+<<<<<<< HEAD
 	    -font TkDefaultFont
 
 	ttk::style map "." \
 	    -foreground [list disabled SystemGrayText]
+=======
+	    -font TkDefaultFont \
+	    ;
+
+	ttk::style map "." \
+	    -foreground [list disabled SystemGrayText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TButton -anchor center -padding {1 1} -width -11
 	ttk::style configure TRadiobutton -padding 2
@@ -91,7 +100,12 @@ namespace eval ttk::theme::vista {
 		disabled		SystemGrayText \
 	    	{readonly focus}	SystemHighlightText \
 	    ] \
+<<<<<<< HEAD
 	    -focusfill	[list {readonly focus} SystemHighlight]
+=======
+	    -focusfill	[list {readonly focus} SystemHighlight] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
         # Entry
         ttk::style configure TEntry -padding {1 1 1 1} ;# Needs lookup
@@ -110,7 +124,12 @@ namespace eval ttk::theme::vista {
         }
 	ttk::style map TEntry \
 	    -selectbackground [list !focus SystemWindow] \
+<<<<<<< HEAD
 	    -selectforeground [list !focus SystemWindowText]
+=======
+	    -selectforeground [list !focus SystemWindowText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
         # Spinbox
         ttk::style configure TSpinbox -padding 0
@@ -144,7 +163,12 @@ namespace eval ttk::theme::vista {
         }
 	ttk::style map TSpinbox \
 	    -selectbackground [list !focus SystemWindow] \
+<<<<<<< HEAD
 	    -selectforeground [list !focus SystemWindowText]
+=======
+	    -selectforeground [list !focus SystemWindowText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
         # SCROLLBAR elements (Vista includes a state for 'hover')
@@ -222,6 +246,7 @@ namespace eval ttk::theme::vista {
         package provide ttk::theme::vista 1.0
     }
 }
+<<<<<<< HEAD
 
 # ttk::theme::vista::configureNotebookStyle --
 #
@@ -253,3 +278,5 @@ proc ttk::theme::vista::configureNotebookStyle {style} {
 	}
     }
 }
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a

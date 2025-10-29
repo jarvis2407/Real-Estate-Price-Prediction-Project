@@ -56,6 +56,7 @@ def foo_printer(obj, pp, cycle):
     pp.text("foo")
 
 
+<<<<<<< HEAD
 def test_display_formatter_active_types_config():
     from IPython.terminal.interactiveshell import TerminalInteractiveShell
     from IPython.core.history import HistoryManager
@@ -86,6 +87,8 @@ def test_display_formatter_active_types_config():
         HistoryManager._instances.update(prev_instances)
 
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 def test_pretty():
     f = PlainTextFormatter()
     f.for_type(A, foo_printer)

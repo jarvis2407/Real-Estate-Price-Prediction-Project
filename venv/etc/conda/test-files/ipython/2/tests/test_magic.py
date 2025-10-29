@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 """Tests for various magic functions."""
 
+<<<<<<< HEAD
 import collections
 import gc
 import io
 import json
 import os
 import platform
+=======
+import gc
+import io
+import os
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 import re
 import shlex
 import signal
@@ -35,7 +41,10 @@ from IPython.core.magic import (
     register_line_magic,
 )
 from IPython.core.magics import code, execution, logging, osm, script
+<<<<<<< HEAD
 from IPython.core.history import HistoryOutput
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 from IPython.testing import decorators as dec
 from IPython.testing import tools as tt
 from IPython.utils.io import capture_output
@@ -736,6 +745,7 @@ def test_whos():
     _ip.run_line_magic("whos", "")
 
 
+<<<<<<< HEAD
 @pytest.mark.parametrize(
     "input,expected",
     (
@@ -813,6 +823,8 @@ def test_whos_len_pandas():
     assert stdout == expected.strip() + "\n"
 
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 def doctest_precision():
     """doctest for %precision
 
@@ -1001,17 +1013,23 @@ def test_extension():
 
 def test_notebook_export_json():
     pytest.importorskip("nbformat")
+<<<<<<< HEAD
     from nbformat import read, sign
 
     _ip = get_ipython()
     _ip.history_manager.reset()  # Clear any existing history.
     _ip.run_line_magic("config", "NotebookNotary.algorithm = 'sha384'")
+=======
+    _ip = get_ipython()
+    _ip.history_manager.reset()  # Clear any existing history.
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     cmds = ["a=1", "def b():\n  return a**2", "print('noël, été', b())"]
     for i, cmd in enumerate(cmds, start=1):
         _ip.history_manager.store_inputs(i, cmd)
     with TemporaryDirectory() as td:
         outfile = os.path.join(td, "nb.ipynb")
         _ip.run_line_magic("notebook", "%s" % outfile)
+<<<<<<< HEAD
         with open(outfile) as f:
             exported = json.load(f)
         nb = read(outfile, as_version=4)
@@ -1029,6 +1047,8 @@ def test_notebook_export_json():
     notary = sign.NotebookNotary(algorithm="sha384")
     is_trusted = notary.check_signature(nb)
     assert is_trusted, "Exported notebook should be trusted"
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 def test_notebook_export_json_with_output():
@@ -1095,6 +1115,7 @@ def test_notebook_export_json_with_output():
         _ip.colors = "nocolor"
 
 
+<<<<<<< HEAD
 def test_notebook_export_single_display():
     """Test that multiple MIME types create a single display_data output, not multiple."""
     pytest.importorskip("nbformat")
@@ -1142,6 +1163,8 @@ def test_notebook_export_single_display():
         _ip.execution_count = orig_execution_count
 
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 class TestEnv(TestCase):
     def test_env(self):
         env = _ip.run_line_magic("env", "")
@@ -1445,6 +1468,7 @@ def test_script_out():
     assert ip.user_ns["output"].strip() == "hi"
 
 
+<<<<<<< HEAD
 def test_script_out_multiple_lines():
     ip = get_ipython()
     code = "print('hi')\nprint('this')\nprint('is')\nprint('ipython')"
@@ -1452,6 +1476,8 @@ def test_script_out_multiple_lines():
     assert ip.user_ns["output"].strip().splitlines() == ["hi", "this", "is", "ipython"]
 
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 def test_script_err():
     ip = get_ipython()
     ip.run_cell_magic(

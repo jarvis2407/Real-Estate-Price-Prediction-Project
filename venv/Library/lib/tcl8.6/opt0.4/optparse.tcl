@@ -785,7 +785,11 @@ proc ::tcl::OptCheckType {arg type {typeArgs ""}} {
                 if {[regexp {^-(.+)$} $arg1 x type]} {
 		    # flags/optValue as they are optional, need a "value",
 		    # on the contrary, for a variable (non optional),
+<<<<<<< HEAD
 		    # default value is pointless, 'cept for choices :
+=======
+	            # default value is pointless, 'cept for choices :
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 		    if {$isflag || $isopt || ($type == "choice")} {
 			return [OptNewInst $state $varname $type $arg2 ""]
 		    } else {

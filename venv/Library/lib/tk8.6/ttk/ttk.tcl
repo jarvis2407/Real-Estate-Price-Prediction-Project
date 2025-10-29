@@ -95,6 +95,7 @@ proc ::ttk::setTheme {theme} {
     set currentTheme $theme
 }
 
+<<<<<<< HEAD
 ## ttk::configureNotebookStyle $style --
 #	Sets theme-specific option values for the ttk::notebook style $style
 #	and/or the style $style.Tab.  To be invoked if the -tabposition option
@@ -110,6 +111,8 @@ proc ::ttk::configureNotebookStyle {style} {
     }
 }
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 ### Load widget bindings.
 #
 source -encoding utf-8 [file join $::ttk::library button.tcl]

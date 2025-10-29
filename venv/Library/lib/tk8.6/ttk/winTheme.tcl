@@ -13,10 +13,18 @@ namespace eval ttk::theme::winnative {
 	    -fieldbackground SystemWindow \
 	    -insertcolor SystemWindowText \
 	    -troughcolor SystemScrollbar \
+<<<<<<< HEAD
 	    -font TkDefaultFont
 
 	ttk::style map "." -foreground [list disabled SystemGrayText]
         ttk::style map "." -embossed [list disabled 1]
+=======
+	    -font TkDefaultFont \
+	    ;
+
+	ttk::style map "." -foreground [list disabled SystemGrayText] ;
+        ttk::style map "." -embossed [list disabled 1] ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TButton \
 	    -anchor center -width -11 -relief raised -shiftrelief 1
@@ -28,12 +36,21 @@ namespace eval ttk::theme::winnative {
 	ttk::style map TButton -relief {{!disabled pressed} sunken}
 
 	ttk::style configure TEntry \
+<<<<<<< HEAD
 	    -padding 2 -insertwidth 1
+=======
+	    -padding 2 -selectborderwidth 0 -insertwidth 1
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	ttk::style map TEntry \
 	    -fieldbackground \
 	    	[list readonly SystemButtonFace disabled SystemButtonFace] \
 	    -selectbackground [list !focus SystemWindow] \
+<<<<<<< HEAD
 	    -selectforeground [list !focus SystemWindowText]
+=======
+	    -selectforeground [list !focus SystemWindowText] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style configure TCombobox -padding 2
 	ttk::style map TCombobox \
@@ -46,7 +63,12 @@ namespace eval ttk::theme::winnative {
 		disabled		SystemGrayText \
 	    	{readonly focus}	SystemHighlightText \
 	    ] \
+<<<<<<< HEAD
 	    -focusfill	[list {readonly focus} SystemHighlight]
+=======
+	    -focusfill	[list {readonly focus} SystemHighlight] \
+	    ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 	ttk::style element create ComboboxPopdownFrame.border from default
 	ttk::style configure ComboboxPopdownFrame \
@@ -76,6 +98,7 @@ namespace eval ttk::theme::winnative {
 				selected SystemHighlightText]
 
         ttk::style configure TProgressbar \
+<<<<<<< HEAD
 	    -background SystemHighlight -borderwidth 0
     }
 }
@@ -108,5 +131,8 @@ proc ttk::theme::winnative::configureNotebookStyle {style} {
 	    ttk::style configure $style -tabmargins     {2 2 2 0}
 	    ttk::style map $style.Tab -expand {selected {2 2 2 0}}
 	}
+=======
+	    -background SystemHighlight -borderwidth 0 ;
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     }
 }

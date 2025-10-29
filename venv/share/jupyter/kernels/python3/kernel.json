@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "argv": [
     "c:/Users/lahya/OneDrive/Documents/harsha/venv/python.exe",
     "-m",
@@ -11,4 +12,18 @@
   "metadata": {
     "debugger": true
   }
+=======
+ "argv": [
+  "c:/Users/rajas/Real-Estate-Price-Prediction-Project/venv\\python.exe",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Python 3 (ipykernel)",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 }

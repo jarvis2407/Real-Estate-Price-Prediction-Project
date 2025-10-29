@@ -6,7 +6,11 @@
     "vs2015_runtime >=14.29.30037"
   ],
   "depends": [],
+<<<<<<< HEAD
   "extracted_package_dir": "C:\\Users\\lahya\\anaconda4\\pkgs\\ucrt-10.0.22621.0-haa95532_0",
+=======
+  "extracted_package_dir": "C:\\Users\\rajas\\anaconda3\\pkgs\\ucrt-10.0.22621.0-haa95532_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "files": [
     "Library/bin/api-ms-win-core-console-l1-1-0.dll",
     "Library/bin/api-ms-win-core-console-l1-2-0.dll",
@@ -98,12 +102,20 @@
   "fn": "ucrt-10.0.22621.0-haa95532_0.conda",
   "license": "LicenseRef-MicrosoftWindowsSDK10",
   "link": {
+<<<<<<< HEAD
     "source": "C:\\Users\\lahya\\anaconda4\\pkgs\\ucrt-10.0.22621.0-haa95532_0",
+=======
+    "source": "C:\\Users\\rajas\\anaconda3\\pkgs\\ucrt-10.0.22621.0-haa95532_0",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "type": 1
   },
   "md5": "15e1b10231d7d236520501fcfb440f31",
   "name": "ucrt",
+<<<<<<< HEAD
   "package_tarball_full_path": "C:\\Users\\lahya\\anaconda4\\pkgs\\ucrt-10.0.22621.0-haa95532_0.conda",
+=======
+  "package_tarball_full_path": "C:\\Users\\rajas\\anaconda3\\pkgs\\ucrt-10.0.22621.0-haa95532_0.conda",
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
   "paths_data": {
     "paths": [
       {

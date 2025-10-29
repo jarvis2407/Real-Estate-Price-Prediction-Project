@@ -94,8 +94,13 @@ proc http_get { url args } {
 	meta		{}
 	currentsize	0
 	totalsize	0
+<<<<<<< HEAD
 	type            text/html
 	body            {}
+=======
+        type            text/html
+        body            {}
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 	status		""
     }
     set options {-blocksize -channel -command -handler -headers \

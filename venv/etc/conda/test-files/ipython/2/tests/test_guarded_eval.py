@@ -313,17 +313,25 @@ IntTypeAlias = TypeAliasType("IntTypeAlias", int)
 HeapTypeAlias = TypeAliasType("HeapTypeAlias", HeapType)
 
 
+<<<<<<< HEAD
 class ProtocolTest(Protocol):
+=======
+class TestProtocol(Protocol):
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     def test_method(self) -> bool:
         pass
 
 
+<<<<<<< HEAD
 class ProtocolTestImplementer(ProtocolTest):
     def test_method(self) -> bool:
         return True
 
 
 class TypedClass:
+=======
+class TestProtocolImplementer(TestProtocol):
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     def test_method(self) -> bool:
         return True
 
@@ -340,10 +348,20 @@ class SpecialTyping:
     def custom_heap_type(self) -> CustomHeapType:
         return CustomHeapType(HeapType())
 
+<<<<<<< HEAD
     def int_type_alias(self) -> IntTypeAlias:
         return 1
 
     def heap_type_alias(self) -> HeapTypeAlias:
+=======
+    # TODO: remove type:ignore comment once mypy
+    # supports explicit calls to `TypeAliasType`, see:
+    # https://github.com/python/mypy/issues/16614
+    def int_type_alias(self) -> IntTypeAlias:  # type:ignore[valid-type]
+        return 1
+
+    def heap_type_alias(self) -> HeapTypeAlias:  # type:ignore[valid-type]
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
         return 1
 
     def literal(self) -> Literal[False]:
@@ -358,9 +376,12 @@ class SpecialTyping:
     def any_str(self, x: AnyStr) -> AnyStr:
         return x
 
+<<<<<<< HEAD
     def with_kwargs(self, a=1, b=2, c=3) -> int:
         return a + b + c
 
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     def annotated(self) -> Annotated[float, "positive number"]:
         return 1
 
@@ -377,8 +398,13 @@ class SpecialTyping:
     def union_str_and_int(self) -> Union[str, int]:
         return ""
 
+<<<<<<< HEAD
     def protocol(self) -> ProtocolTest:
         return ProtocolTestImplementer()
+=======
+    def protocol(self) -> TestProtocol:
+        return TestProtocolImplementer()
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
     def typed_dict(self) -> Movie:
         return {"name": "The Matrix", "year": 1999}
@@ -408,7 +434,10 @@ class SpecialTyping:
         [SpecialTyping(), "data.literal_string()", str, False],
         [SpecialTyping(), "data.any_str('a')", str, False],
         [SpecialTyping(), "data.any_str(b'a')", bytes, False],
+<<<<<<< HEAD
         [SpecialTyping(), "data.with_kwargs(b=3)", int, False],
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
         [SpecialTyping(), "data.annotated()", float, False],
         [SpecialTyping(), "data.annotated_self()", SpecialTyping, False],
         [SpecialTyping(), "data.int_type_guard()", int, False],
@@ -462,6 +491,7 @@ def test_mocks_items_of_call_results(data, code, expected_items):
 
 
 @pytest.mark.parametrize(
+<<<<<<< HEAD
     "code,expected",
     [
         ["\n".join(["instance = TypedClass()", "instance.test_method()"]), bool],
@@ -612,6 +642,8 @@ def test_evaluates_type_assignments(code, expected, check):
 
 
 @pytest.mark.parametrize(
+=======
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
     "data,bad",
     [
         [[1, 2, 3], "data.append(4)"],
@@ -858,6 +890,7 @@ def test_access_locals_and_globals():
 
 @pytest.mark.parametrize(
     "code",
+<<<<<<< HEAD
     ["x += 1", "del x"],
 )
 @pytest.mark.parametrize("context", [minimal(x=1), limited(x=1), unsafe(x=1)])
@@ -875,6 +908,14 @@ def test_does_not_populate_namespace(code, context):
     guarded_eval(code, context)
     assert "test" not in context.locals
     assert "test" not in context.globals
+=======
+    ["def func(): pass", "class C: pass", "x = 1", "x += 1", "del x", "import ast"],
+)
+@pytest.mark.parametrize("context", [minimal(), limited(), unsafe()])
+def test_rejects_side_effect_syntax(code, context):
+    with pytest.raises(SyntaxError):
+        guarded_eval(code, context)
+>>>>>>> cb2058a7352ad65a7756918b9e8539859882041a
 
 
 def test_subscript():
